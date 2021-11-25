@@ -1,5 +1,3 @@
-/*#ifndef PROJECTILE_H_INCLUDED
-#define PROJECTILE_H_INCLUDED*/
 #pragma once
 #include <SFML/Graphics.hpp>
 
@@ -16,37 +14,27 @@ public:
 private:
 	sf::FloatRect p_hitbox;
 };
-class Projectile /* : public sf::Drawable*/ {
+class Projectile {
 public:
 	Projectile();
 	~Projectile();
-	void initP(std::string textureName, const sf::Vector2f pos, const float angle, const bool direction);
-	//virtual ~Projectile();
-
-	//const bool& getCanBeRemoved() const;
-	//const sf::FloatRect& getBoundingBox() const;
-	//void destroy
+	void initP(std::string textureName, const sf::Vector2f pos, float angle, const bool direction);
 	sf::Sprite getSpriteP();
 	sf::FloatRect getHitboxP();
 	void update(const sf::Time dt);
+	int getDamage();
 
 private:
-	//virtual void draw(sf::RenderTarget& renderTarget, sf::RenderStates renderStates) const;
-
-	//bool canBeRemoved_;
-	//sf::FloatRect boundingBox_;
 	float angle_;
 	float speed_;
 	float speed2_;
 	bool check;
 	bool direct;
-	//sf::RectangleShape shape_;
 	sf::Texture Tproj_;
 	HitboxSpriteP Sproj_;
 	sf::Vector2f PoseP_;
-
+	std::string typeProj;
 };
-//#endif#
 
 /*#ifndef PROJECTILE_H_INCLUDED
 #define PROJECTILE_H_INCLUDED

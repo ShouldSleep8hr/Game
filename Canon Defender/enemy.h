@@ -22,10 +22,13 @@ public:
 	void init(std::string textureName, sf::Vector2f position, float speed, int hp);
 	void update2(const sf::Time dt);
 	sf::Sprite getSprite();
+	std::string getEnemyType();
 	sf::FloatRect getHitbox();
 	float getSpeed();
 	int getHP();
-	void minusHP();
+	void minusHP(int currentHP);
+	int getscoreHP();
+	void SlowEnemy();
 
 private:
 	sf::Texture Tenemy_;
@@ -33,4 +36,7 @@ private:
 	sf::Vector2f Posenemy_;
 	float Speedenemy_;
 	int hp_;
+	bool checkfly;
+	int scoreHP;
+	std::string enemyType;
 };

@@ -25,7 +25,7 @@ public:
 	sf::FloatRect getHitboxI();
 	float getSpeedI();
 	int getHPI();
-	void minusHPI();
+	void minusHPI(int currentHPI);
 	std::string getitemName();
 
 private:
